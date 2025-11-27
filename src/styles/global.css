@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @import '@fontsource-variable/figtree';
+
+body {
+  font-family: 'Figtree Variable', sans-serif;
+}
