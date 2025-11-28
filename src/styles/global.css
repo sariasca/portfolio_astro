@@ -30,7 +30,7 @@ body {
 
 /* Underline sobre Home */
 
-.inicio::after {
+.inicio-nav::after {
   content: "";
   position: absolute;
   left: 0;
@@ -41,8 +41,37 @@ body {
   transition: width 0.35s ease;
 }
 
-.inicio:hover::after {
+.inicio-nav:hover::after {
   width: 100%;
 }
 
 /* Fin Navbar*/
+
+.underline-chulo {
+  position: relative;
+  display: inline;
+  /* Forzar que el ancho sea solo del texto */
+  width: fit-content;
+}
+
+.underline-chulo::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.underline-chulo:hover::after {
+  width: 100%;
+}
+
+/* Regla específica para forzar el ancho del texto */
+.underline-chulo {
+  display: inline-block;
+  width: max-content;
+  max-width: 100%;
+}
