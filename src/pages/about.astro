@@ -1,9 +1,26 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
+
+import DeviconJavascript from '~icons/devicon/javascript';
+import DeviconReactWordmark from '~icons/devicon/react-wordmark';
+import DeviconNodejsWordmark from '~icons/devicon/nodejs-wordmark';
+import DeviconMysqlWordmark from '~icons/devicon/mysql-wordmark';
+import DeviconTailwindcss from '~icons/devicon/tailwindcss';
+import DeviconJavaWordmark from '~icons/devicon/java-wordmark';
+import DeviconPhp from '~icons/devicon/php';
+import DeviconMongodbWordmark from '~icons/devicon/mongodb-wordmark';
+import DeviconGit from '~icons/devicon/git';
+import DeviconNextjs from '~icons/devicon/nextjs';
+import DeviconAstro from '~icons/devicon/astro';
+import DeviconTypescript from '~icons/devicon/typescript';
+import DeviconDocker from '~icons/devicon/docker';
+import DeviconSpringWordmark from '~icons/devicon/spring-wordmark';
+import DeviconHtml5 from '~icons/devicon/html5';
+import SimpleIconsCss from '~icons/simple-icons/css';
 ---
 
-<BaseLayout title="Sobre mí — Detallado">
+<BaseLayout title="Sobre mí">
   <div slot="navbar">
     <Navbar />
   </div>
@@ -24,14 +41,23 @@ import Navbar from "../components/Navbar.astro";
 
     <h2 class="text-2xl font-semibold mt-10 text-white">Skills técnicas</h2>
     <div class="grid grid-cols-2 gap-4 text-white/80">
-      <span>JavaScript / TypeScript</span>
-      <span>Astro</span>
-      <span>React</span>
-      <span>Node.js</span>
-      <span>SQL / SQLite</span>
-      <span>TailwindCSS</span>
-      <span>Ciberseguridad</span>
-      <span>PowerShell</span>
+      <span><DeviconJavascript/></span>
+      <span><DeviconTypescript/></span>
+      <span><DeviconAstro/></span>
+      <span><DeviconReactWordmark/></span>
+      <span><DeviconNodejsWordmark/></span>
+      <span><DeviconMysqlWordmark/></span>
+      <span><DeviconTailwindcss/></span>
+      <span><DeviconJavaWordmark></span>
+      <span><DeviconPhp></span>
+      <span><DeviconMongodbWordmark/></span>
+      <span><DeviconGit/></span>
+      <span><DeviconNextjs/></span>
+      <span><DeviconDocker/></span>
+      <span><DeviconSpringWordmark/></span>
+      <span><DeviconHtml5/></span>
+      <span><SimpleIconsCss class="text-amber-400"/></span>
+
     </div>
   </section>
 </BaseLayout>

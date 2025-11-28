@@ -14,5 +14,10 @@
     "astro": "^5.16.0",
     "lucide-astro": "^0.555.0",
     "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "@iconify-json/devicon": "^1.2.51",
+    "@iconify-json/simple-icons": "^1.2.60",
+    "unplugin-icons": "^22.5.0"
   }
 }
