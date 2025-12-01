@@ -3,40 +3,38 @@ import {Terminal} from 'lucide-astro';
 
 const currentPath = Astro.url.pathname;
 ---
-
-
-<nav class="fixed top-0 left-0 w-full bg-[#1f3b3b] backdrop-blur-md py-3 z-50">
+<nav class="fixed top-0 left-0 w-full bg-linear-to-r from-[#0a1f1f]/80 to-[#1a2f3f]/80 backdrop-blur-lg py-3 z-50 border-b border-[#1EE6B3]/20">
   <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
     <div class="flex gap-1 inicio-nav relative">
       <Terminal class="mt-0.5 text-[#58f2a9]"/>
-      <a href="/" class="text-xl font-bold text-[#cfdcdf] hover:text-amber-50">Santiago Arias</a>
+      <a href="/" class="text-xl font-bold text-[#e0f7fa] hover:text-[#1EE6B3] transition-colors duration-300">Santiago Arias</a>
     </div>
 
     <div class="flex gap-6">
       <div class="flex gap-2">
-      <a 
-        href="/about"
-        class="nav-link font-bold"
-        aria-current={currentPath === "/about" ? "page" : undefined}
-      >Sobre mí</a>
+        <a 
+          href="/about"
+          class="nav-link font-bold"
+          aria-current={currentPath === "/about" ? "page" : undefined}
+        >Sobre mí</a>
 
-      <a 
-        href="/projects"
-        class="nav-link font-bold"
-        aria-current={currentPath === "/projects" ? "page" : undefined}
-      >Proyectos</a>
+        <a 
+          href="/projects"
+          class="nav-link font-bold"
+          aria-current={currentPath === "/projects" ? "page" : undefined}
+        >Proyectos</a>
 
-      <a 
-        href="/contact"
-        class="nav-link font-bold"
-        aria-current={currentPath === "/contact" ? "page" : undefined}
-      >Contacto</a>
-    </div>
+        <a 
+          href="/contact"
+          class="nav-link font-bold"
+          aria-current={currentPath === "/contact" ? "page" : undefined}
+        >Contacto</a>
+      </div>
     </div>
   </div>
-   <!-- 🔹 Barra separadora centrada y del mismo tamaño -->
+  
   <div class="mt-2 max-w-6xl mx-auto px-4">
-    <div class="h-0.5 bg-[#1EE6B3] rounded-full w-full"></div>
+    <div class="h-px bg-linear-to-r from-transparent via-[#1EE6B3]/60 to-transparent rounded-full w-full"></div>
   </div>
 </nav>
 

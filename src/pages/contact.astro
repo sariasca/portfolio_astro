@@ -9,17 +9,14 @@ import Navbar from "../components/Navbar.astro";
     <Navbar />
   </div>
 
-  <section class="w-full min-h-screen flex flex-col justify-start items-center px-4 pt-20">
+  <section class="w-full flex flex-col justify-start items-center pt-14 pb-5 ">
   <div class="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-xl p-8 max-w-4xl w-full">
-
-
+      
       <h2 class="text-center text-3xl font-semibold mb-10 tracking-wide">
         Contacto y CV
       </h2>
 
-      <!-- Dos columnas -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
         <div class="flex flex-col gap-6 text-lg">
           <div class="flex gap-4 border border-white/20 rounded-lg p-4 items-center">
             <div class="flex items-center justify-center w-16 h-16 rounded-full bg-white/20 text-white">
@@ -60,12 +57,12 @@ import Navbar from "../components/Navbar.astro";
         </div>
 
         <!-- DERECHA -->
-        <div class="p-6 flex flex-col items-center justify-center rounded-xl bg-white/5 border border-white/20 backdrop-blur-sm">
+        <div class="p-6 flex flex-col items-center justify-center rounded-xl border border-white/20 backdrop-blur-sm">
           <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-white/20 text-white">
             <FileUser class="w-12 h-12"/>
           </div>
           <h3 class="text-xl font-semibold mb-2 text-center">Conoce mi trayectoria</h3>
-          <p class="text-sm opacity-80 mb-4 text-center">
+          <p class="opacity-80 mb-4 text-center">
             Descubre mi experiencia, habilidades y los proyectos en los que he trabajado a 
             lo largo de mi carrera profesional.
           </p>
@@ -73,15 +70,12 @@ import Navbar from "../components/Navbar.astro";
           <a
             href="/cv.pdf"
             download
-            class="inline-flex items-center gap-2 font-bold bg-[#58f2a9] text-gray-600/90 px-4 py-2 rounded-lg 
-            hover:bg-[#47b984] hover:text-[#e5eef0] transition-all duration-200"
+            class="inline-flex items-center gap-2 nav-link font-bold"
           >
             Descargar CV
             <FileDown class="w-5 h-5"/>
           </a>
         </div>
-
-
       </div>
     </div>
   </section>

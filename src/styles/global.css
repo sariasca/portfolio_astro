@@ -1,26 +1,116 @@
 @import "tailwindcss";
 @import '@fontsource-variable/figtree';
 
+/** BODY **/
+
 body {
   font-family: 'Figtree Variable', sans-serif;
 }
 
-/* Para el Navbar */
+/* Fondo */
+.cyberpunk-background {
+  position: relative;
+  min-height: 100vh;
+  background: #060b0b;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 180, 0.08), transparent 65%),
+    radial-gradient(circle at 80% 80%, rgba(180, 0, 255, 0.12), transparent 70%),
+    linear-gradient(135deg, rgba(0, 60, 50, 0.4), rgba(40, 0, 70, 0.3));
+  background-blend-mode: normal;
+}
+
+/* Para contener pseudo-elementos */
+.cyberpunk-background::before,
+.cyberpunk-background::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cyberpunk-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 120%,
+    rgba(120, 0, 200, 0.12),
+    transparent 75%
+  );
+  animation: pulseGlow 16s ease-in-out infinite;
+  will-change: opacity;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    opacity: 0.15; 
+  }
+  50% { 
+    opacity: 0.25;
+  }
+}
+
+/* Partículas */
+.cyberpunk-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:     
+    radial-gradient(10px 10px at 15% 25%, rgba(0, 255, 180, 0.3), transparent 90%),
+    radial-gradient(4px 4px at 35% 65%, rgba(0, 255, 180, 0.2), transparent 90%),
+    radial-gradient(20px 20px at 55% 15%, rgba(0, 255, 180, 0.4), transparent 90%),
+    radial-gradient(10px 10px at 75% 45%, rgba(0, 255, 180, 0.25), transparent 90%),
+    radial-gradient(2px 2px at 25% 75%, rgba(0, 255, 180, 0.2), transparent 90%),
+    radial-gradient(7px 7px at 85% 85%, rgba(0, 255, 180, 0.35), transparent 90%),
+    
+    radial-gradient(10px 10px at 65% 20%, rgba(180, 0, 255, 0.3), transparent 90%),
+    radial-gradient(4px 4px at 85% 60%, rgba(180, 0, 255, 0.25), transparent 90%),
+    radial-gradient(20px 20px at 45% 35%, rgba(180, 0, 255, 0.2), transparent 90%),
+    radial-gradient(8px 8px at 15% 55%, rgba(180, 0, 255, 0.35), transparent 90%),
+    radial-gradient(2px 2px at 70% 80%, rgba(180, 0, 255, 0.2), transparent 90%),
+    radial-gradient(6px 6px at 30% 90%, rgba(180, 0, 255, 0.3), transparent 90%);
+  
+  background-repeat: no-repeat;
+  animation: particleFloat 50s linear infinite;
+  opacity: 0.4;
+  filter: blur(0.3px);
+  will-change: transform;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-18%, -15%, 0);
+  }
+}
+
+/** FIN BODY **/
+
+/** NAVBAR **/
+
 .nav-link {
-  @apply relative px-3 py-1 rounded-md text-[#cfdcdf] transition-all;
+  @apply relative px-3 py-1 rounded-md text-[#b8e6f0] transition-all;
   transition: all 0.45s ease;
+  text-shadow: 0 0 8px rgba(30, 230, 179, 0.3);
 }
 
 .nav-link:hover,
 .nav-link[aria-current="page"] {
-  @apply text-[#1f3b3b];
+  @apply text-[#0a1a1a];
+  text-shadow: 0 0 12px rgba(30, 230, 179, 0.8);
 }
 
 .nav-link::before {
   content: "";
   @apply absolute inset-0 rounded-md scale-0 opacity-0 transition-all;
-  background: #1EE6B3;
+  background: linear-gradient(135deg, #1EE6B3, #58f2a9);
   z-index: -1;
+  box-shadow: 0 0 15px rgba(30, 230, 179, 0.4);
 }
 
 .nav-link:hover::before,
@@ -28,29 +118,62 @@ body {
   @apply scale-100 opacity-100;
 }
 
-/* Underline sobre Home */
+/* Glow hover */
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  content: "";
+  @apply absolute inset-0 rounded-md opacity-0;
+  background: rgba(30, 230, 179, 0.1);
+  box-shadow: 0 0 20px rgba(30, 230, 179, 0.6);
+  z-index: -2;
+  animation: linkGlow 2s ease-in-out infinite;
+}
 
+@keyframes linkGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Underline sobre Home */
 .inicio-nav::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;              /* distancia bajo el texto */
+  bottom: -4px;              
   width: 0%;
   height: 2px;
-  background-color: white;    /* color del underline */
+  background: linear-gradient(90deg, transparent, #1EE6B3, transparent);
   transition: width 0.35s ease;
+  box-shadow: 0 0 8px #1EE6B3;
 }
 
 .inicio-nav:hover::after {
   width: 100%;
 }
 
-/* Fin Navbar*/
+/* Partículas */
+nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(6px 6px at 20% 10%, rgba(30, 230, 179, 0.3), transparent 80%),
+    radial-gradient(5px 5px at 80% 30%, rgba(180, 0, 255, 0.2), transparent 80%),
+    radial-gradient(2.6px 2.6px at 60% 5%, rgba(30, 230, 179, 0.2), transparent 80%);
+  background-repeat: no-repeat;   
+  animation: particleFloat 50s linear infinite;
+  opacity: 0.4;
+}
 
+/** FIN NAVBAR **/
+
+/** CONTACTO **/
+
+/* Underline enlaces*/
 .underline-chulo {
   position: relative;
   display: inline;
-  /* Forzar que el ancho sea solo del texto */
   width: fit-content;
 }
 
@@ -74,4 +197,66 @@ body {
   display: inline-block;
   width: max-content;
   max-width: 100%;
+}
+
+/** FIN CONTACTO **/
+
+
+
+/* Estilo para los iconos de skills */
+.skill-icon {
+  @apply relative rounded-lg transition-all duration-500 flex items-center justify-center;
+  background: rgba(15, 25, 35, 0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(30, 230, 179, 0.1);
+  padding: 1rem;
+  width: 7rem;
+  height: 7rem;
+}
+
+/* Tamaño SVG */
+.skill-icon svg {
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+  max-width: 100%;
+  max-height: 100%;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+}
+
+.skill-icon:hover {
+  border-color: rgba(30, 230, 179, 0.3);
+  box-shadow: 
+    0 8px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.2),
+    inset 0 0 30px rgba(0, 255, 180, 0.1),
+    0 0 25px rgba(30, 230, 179, 0.15);
+  transform: translateY(-3px) scale(1.02);
+  background: rgba(15, 25, 35, 0.6);
+}
+
+/* Glow hover */
+.skill-icon:hover::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, 
+    rgba(30, 230, 179, 0.2), 
+    rgba(180, 0, 255, 0.1), 
+    rgba(30, 230, 179, 0.2));
+  z-index: -1;
+  filter: blur(4px);
+  opacity: 0;
+  animation: iconGlow 2s ease-in-out infinite;
+}
+
+@keyframes iconGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.skill-icon svg {
+  @apply w-full h-auto;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+  border-radius: 0.5rem;
 }
