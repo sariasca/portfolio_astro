@@ -1,0 +1,84 @@
+---
+import { Github, Linkedin, Mails, FileUser, FileDown } from 'lucide-astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+
+---
+<Layout title="Contacto">
+  <div slot="navbar">
+    <Navbar />
+  </div>
+
+  <section class="w-full flex flex-col justify-start items-center pt-14 pb-5 ">
+  <div class="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-xl p-8 max-w-4xl w-full">
+      
+      <h2 class="text-center text-3xl font-semibold mb-10 tracking-wide">
+        Contacto y CV
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="flex flex-col gap-6 text-lg">
+          <div class="flex gap-4 border border-white/20 rounded-lg p-4 items-center">
+            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-white/20 text-white">
+              <Github class="w-8 h-8"/>
+            </div>
+
+            <div class="flex flex-col">
+              <a href="https://github.com/sariasca" target="_blank" class="underline-chulo text-2xl">
+                GitHub
+              </a>
+              <span class="text-[#cfdcdf]">/sariasca</span>
+            </div>
+          </div>
+
+          <div class="flex gap-4 border border-white/20 rounded-lg p-4 items-center">
+            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-white/20 text-white">
+              <Linkedin class="w-8 h-8"/>
+            </div>
+            <div class="flex flex-col">
+              <a href="https://www.linkedin.com/in/santiago-arias-cardona/" target="_blank" class="underline-chulo text-2xl">
+                LinkedIn 
+              </a>
+            </div>
+          </div>
+
+          <div class="flex gap-4 border border-white/20 rounded-lg p-4 items-center">
+            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-white/20 text-white">
+              <Mails class="w-8 h-8"/>
+            </div>
+            <div class="flex flex-col">
+              <a href="mailto:santiagoariastrbj@gmail.com" 
+                class="underline-chulo text-2xl">
+                Correo
+              </a>
+              <span class="text-[#cfdcdf]" >
+                santiagoariastrbj<span class="hidden md:inline">@</span><br class="md:hidden"/>@gmail.com
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 flex flex-col items-center justify-center rounded-xl border border-white/20 backdrop-blur-sm">
+          <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-white/20 text-white">
+            <FileUser class="w-12 h-12"/>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-center">Conoce mi trayectoria</h3>
+          <p class="opacity-80 mb-4 text-center">
+            Descubre mi experiencia, habilidades y los proyectos en los que he trabajado a 
+            lo largo de mi carrera profesional.
+          </p>
+
+          <a
+            href="/CV_Santiago_Arias.pdf"
+            download
+            class="inline-flex items-center gap-2 nav-link font-bold"
+          >
+            Descargar CV
+            <FileDown class="w-5 h-5"/>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</Layout>

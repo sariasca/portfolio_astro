@@ -1,0 +1,100 @@
+---
+import { Terminal, Menu, X } from 'lucide-astro';
+import { useState } from 'react';
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="fixed top-0 left-0 w-full bg-linear-to-r from-[#0a1f1f]/80 to-[#1a2f3f]/80 backdrop-blur-lg py-3 z-50 border-b border-[#1EE6B3]/20">
+  <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
+    <div class="flex gap-1 inicio-nav relative">
+      <Terminal class="mt-0.5 text-[#58f2a9]"/>
+      <a href="/" class="text-xl font-bold text-[#e0f7fa] hover:text-[#1EE6B3] transition-colors duration-300">Inicio</a>
+    </div>
+
+    <div class="hidden md:flex gap-6">
+      <div class="flex gap-2">
+        <a 
+          href="/about"
+          class="nav-link font-bold"
+          aria-current={currentPath === "/about" ? "page" : undefined}
+        >Sobre mí</a>
+
+        <a 
+          href="/projects"
+          class="nav-link font-bold"
+          aria-current={currentPath === "/projects" ? "page" : undefined}
+        >Proyectos</a>
+
+        <a 
+          href="/contact"
+          class="nav-link font-bold"
+          aria-current={currentPath === "/contact" ? "page" : undefined}
+        >Contacto</a>
+      </div>
+    </div>
+
+    <button 
+      id="menu-toggle"
+      class="md:hidden text-[#e0f7fa] hover:text-[#1EE6B3] transition-colors"
+      aria-label="Abrir menú"
+    >
+      <Menu id="menu-icon" class="w-6 h-6" />
+      <X id="close-icon" class="w-6 h-6 hidden" />
+    </button>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+    <div class="flex flex-col gap-3 mt-3">
+      <a 
+        href="/about"
+        class="nav-link-mobile font-bold py-3"
+        aria-current={currentPath === "/about" ? "page" : undefined}
+      >Sobre mí</a>
+
+      <a 
+        href="/projects"
+        class="nav-link-mobile font-bold py-3"
+        aria-current={currentPath === "/projects" ? "page" : undefined}
+      >Proyectos</a>
+
+      <a 
+        href="/contact"
+        class="nav-link-mobile font-bold py-3"
+        aria-current={currentPath === "/contact" ? "page" : undefined}
+      >Contacto</a>
+    </div>
+  </div>
+  
+  <div class="mt-2 max-w-6xl mx-auto px-4">
+    <div class="h-px bg-linear-to-r from-transparent via-[#1EE6B3]/60 to-transparent rounded-full w-full"></div>
+  </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (!menuToggle || !mobileMenu || !menuIcon || !closeIcon) {
+    return;
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    
+    if (isHidden) {
+      mobileMenu.classList.remove('hidden');
+      menuIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.add('hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+  });
+});
+</script>
