@@ -9,4 +9,5 @@ export const iconMap: Record<string, string> = {
   'React': 'devicon:react',
   'Vite': 'devicon:vitejs',
   'Express': 'devicon:express',
+  'CSS' : 'simple-icons:css',
 };

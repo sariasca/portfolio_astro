@@ -60,7 +60,7 @@ export default function ProjectsFilter({ projects: allProjects }) {
             onClick={() => toggleFilter(tech)}
             className="active-filter-btn px-3 py-2 rounded-lg border border-[#1EE6B3] bg-[#1EE6B3]/20 text-white flex items-center gap-2 transition-all hover:bg-[#1EE6B3]/30"
           >
-            <IconTech name={tech} size={16} className="text-current" />
+            <IconTech name={tech} size={16} className={`text-current ${tech === 'CSS' ? '!text-amber-300' : ''}`} />
             <span className="text-sm">{tech}</span>
             <span className="text-lg hover:text-red-400 ml-2">×</span>
           </button>
@@ -88,7 +88,7 @@ export default function ProjectsFilter({ projects: allProjects }) {
                 className="p-2 rounded-lg border border-gray-700 hover:border-[#1EE6B3] hover:scale-110 transition-all"
                 title={tech}
               >
-                <IconTech name={tech} size={24} className="mx-auto text-gray-300" />
+                <IconTech name={tech} size={24} className={`mx-auto text-gray-300 ${tech === 'CSS' ? '!text-amber-300' : ''}`} />
               </button>
             ))}
           </div>
