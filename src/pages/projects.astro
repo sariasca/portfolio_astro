@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
+import ProjectsFilter from '../components/ProjectsFilter.jsx';
+---
+
+<BaseLayout title="Proyectos">
+  <div class="py-5">
+    <h1 class="text-4xl font-bold mb-8 text-white">Proyectos</h1>
+    
+    <ProjectsFilter 
+      projects={projects}
+      client:load
+    />
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      {projects.map(project => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

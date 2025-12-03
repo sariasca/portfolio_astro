@@ -8,7 +8,7 @@ body {
 }
 
 /* Fondo */
-.cyberpunk-background {
+.body-background {
   position: relative;
   min-height: 100vh;
   background: #060b0b;
@@ -20,8 +20,8 @@ body {
 }
 
 /* Para contener pseudo-elementos */
-.cyberpunk-background::before,
-.cyberpunk-background::after {
+.body-background::before,
+.body-background::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -29,7 +29,7 @@ body {
   z-index: -1;
 }
 
-.cyberpunk-background::before {
+.body-background::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -53,7 +53,7 @@ body {
 }
 
 /* Partículas */
-.cyberpunk-background::after {
+.body-background::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -166,6 +166,24 @@ nav::before {
   opacity: 0.4;
 }
 
+.nav-link-mobile {
+  @apply relative px-4 py-3 rounded-lg text-[#b8e6f0] transition-all block;
+  background: rgba(15, 25, 35, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(30, 230, 179, 0.2);
+}
+
+.nav-link-mobile:hover,
+.nav-link-mobile[aria-current="page"] {
+  @apply text-white;
+  background: rgba(30, 230, 179, 0.15);
+  border-color: #1EE6B3;
+}
+
+#mobile-menu {
+  z-index: 100;
+}
+
 /** FIN NAVBAR **/
 
 /** CONTACTO **/
@@ -201,7 +219,7 @@ nav::before {
 
 /** FIN CONTACTO **/
 
-
+/** ABOUT ME - SKILLS  **/
 
 /* Estilo para los iconos de skills */
 .skill-icon {
@@ -214,7 +232,6 @@ nav::before {
   height: 7rem;
 }
 
-/* Tamaño SVG */
 .skill-icon svg {
   width: 3.5rem !important;
   height: 3.5rem !important;
@@ -260,3 +277,43 @@ nav::before {
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
   border-radius: 0.5rem;
 }
+
+/** FIN ABOUT ME **/
+
+/** PROJECTS **/
+
+.project-card {
+  @apply bg-linear-to-br from-gray-600/50 to-black/10 rounded-2xl p-5 border border-gray-800;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: #1EE6B3;
+  box-shadow: 0 10px 30px rgba(30, 230, 179, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Filtros */
+
+.filter-btn.active {
+  border-color: #1EE6B3;
+  background: rgba(30, 230, 179, 0.1);
+  color: white;
+}
+
+#dropdown-menu {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.active-filter-btn {
+  backdrop-filter: blur(8px);
+}
+
+/** FIN PROJECTS **/
+
