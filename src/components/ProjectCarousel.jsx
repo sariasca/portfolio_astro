@@ -4,45 +4,38 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 export default function ProjectCarousel({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  if (images.length <= 1) {
-    return (
+  const renderImage = (src, alt) => (
+    <div className="aspect-video overflow-hidden rounded-xl bg-gray-900 group">
       <img 
-        src={images[0]} 
-        alt="Project" 
-        className="w-full h-full object-cover"
+        src={src} 
+        alt={alt}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
-    );
+    </div>
+  );
+
+  if (images.length <= 1) {
+    return renderImage(images[0], "Project");
   }
 
-  const next = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prev = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  const next = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+  const prev = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="relative aspect-video overflow-hidden rounded-xl bg-gray-900">
+    <div className="relative">
+      {renderImage(images[currentIndex], `Project view ${currentIndex + 1}`)}
       
-      <img 
-        src={images[currentIndex]} 
-        alt={`Project view ${currentIndex + 1}`}
-        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-      />
-      
-      {/* Flechas */}
       <button
         onClick={prev}
         className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/80 transition-all"
-        aria-label="Previous image"
+        aria-label="Imagen anterior"
       >
         <ArrowLeft size={20} />
       </button>
       <button
         onClick={next}
         className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/80 transition-all"
-        aria-label="Next image"
+        aria-label="Siguiente imagen"
       >
         <ArrowRight size={20} />
       </button>
@@ -58,7 +51,7 @@ export default function ProjectCarousel({ images }) {
                 ? 'bg-[#1EE6B3] scale-125' 
                 : 'bg-white/50 hover:bg-white/80'
             }`}
-            aria-label={`Go to image ${idx + 1}`}
+            aria-label={`Ir a imagen ${idx + 1}`}
           />
         ))}
       </div>
