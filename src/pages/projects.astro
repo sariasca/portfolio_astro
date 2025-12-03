@@ -1,11 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { projects } from '../data/projects';
 import ProjectsFilter from '../components/ProjectsFilter.jsx';
 ---
 
-<BaseLayout title="Proyectos">
+<Layout title="Proyectos">
   <div class="py-5">
     <h1 class="text-4xl font-bold mb-8 text-white">Proyectos</h1>
     
@@ -20,4 +20,4 @@ import ProjectsFilter from '../components/ProjectsFilter.jsx';
       ))}
     </div>
   </div>
-</BaseLayout>
+</Layout>
