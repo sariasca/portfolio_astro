@@ -28,5 +28,15 @@ export const projects: Project[] = [
     tags: ["Editor de texto", "Herramienta de productividad", "Frontend"],
     technologies: ["React", "JavaScript"],
     link: "https://editordetextosimple.netlify.app/"
+  },
+  {
+    id: 4,
+    title: "Aplicacion de gestión de tareas",
+    images: ["/projectImages/taskapp/taskapp_1.webp", "/projectImages/taskapp/taskapp_2.webp", "/projectImages/taskapp/taskapp_3.webp"],
+    description: `Aplicación web de gestión de tareas con funcionalidades como creación, edición, 
+    eliminación y marcado de tareas como completadas.`,
+    tags: ["Aplicación Web", "Full Stack", "Tareas", "API REST"],
+    technologies: ["Vite", "React", "JavaScript", "TypeScript", "CSS", "Spring", "PostgreSQL"],
+    link: "https://taskapp-sariasca.netlify.app/"
   }
 ];
