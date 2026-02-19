@@ -41,7 +41,7 @@ const { project } = Astro.props as {
         <IconTech 
           name={techName} 
           size={32}
-          className={`text-gray-300 hover:text-[#1EE6B3] ${techName === 'CSS' ? '!text-amber-300' : ''}`}
+          className={`text-gray-300 hover:text-[#1EE6B3] ${techName === 'CSS' ? 'text-amber-300' : ''}`}
           client:load
         />
       </button>
@@ -68,5 +68,20 @@ const { project } = Astro.props as {
     ) : (
       <span class="px-4 py-2 bg-gray-800/50 text-gray-400 rounded-lg font-medium">Próximamente</span>
     )}
+
+    {/* Documentacion API */}
+      {project.apiDoc && (
+        <a 
+          href={`/projects/api/${project.id}`}
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 text-[#1EE6B3] rounded-lg font-bold border border-[#1EE6B3]/30 hover:bg-gray-700 hover:border-[#1EE6B3] transition-all"
+        >
+          {project.apiDoc.label}
+          <IconTech 
+          name="Docs"           
+          client:load
+        />
+        </a>
+      )}
   </div>
 </div>

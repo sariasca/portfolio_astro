@@ -36,7 +36,11 @@ export const projects: Project[] = [
     description: `Aplicación web de gestión de tareas con funcionalidades como creación, edición, 
     eliminación y marcado de tareas como completadas.`,
     tags: ["Aplicación Web", "Full Stack", "Tareas", "API REST"],
-    technologies: ["Vite", "React", "JavaScript", "TypeScript", "CSS", "Spring", "PostgreSQL"],
-    link: "https://taskapp-sariasca.netlify.app/"
+    technologies: ["Vite", "React", "JavaScript", "TypeScript", "Spring", "PostgreSQL"],
+    link: "https://taskapp-sariasca.netlify.app/",
+    apiDoc: {
+      url: "/docs/task-manager/index.html",
+      label: "Ver Documentación API"
+    }
   }
 ];
