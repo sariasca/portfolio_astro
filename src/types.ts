@@ -6,4 +6,8 @@ export interface Project {
   tags: string[];
   technologies: string[];
   link?: string;
+  apiDoc?: {
+    url: string;
+    label: string;
+  };
 }

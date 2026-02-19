@@ -12,4 +12,5 @@ export const iconMap: Record<string, string> = {
   'PostgreSQL': 'devicon:postgresql',
   'CSS': 'simple-icons:css',
   'Spring': 'devicon:spring-wordmark',
+  'Docs': 'pajamas:doc-code',
 };
