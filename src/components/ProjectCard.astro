@@ -72,8 +72,7 @@ const { project } = Astro.props as {
     {/* Documentacion API */}
       {project.apiDoc && (
         <a 
-          href={project.apiDoc.url}
-          target="_blank"
+          href={`/projects/api/${project.id}`}
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 text-[#1EE6B3] rounded-lg font-bold border border-[#1EE6B3]/30 hover:bg-gray-700 hover:border-[#1EE6B3] transition-all"
         >
